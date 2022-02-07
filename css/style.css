@@ -1,0 +1,948 @@
+@charset "UTF-8";
+@import url("./fonts.css");
+@import url("./reset.css");
+
+
+ul#skip{
+    z-index: 2;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+ul#skip li{
+    width: 100%;    
+}
+
+ul#skip li a{
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    text-align: center;
+    background: #000;
+    
+}
+ul#skip li a:focus{
+    font-size: 20px;
+    line-height: 50px;
+    height: 50px;
+}
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+#wrap{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;    
+    /* 자리가 넘치면 보이지 말것 (반응형) */
+}
+
+#wrap #header{
+    width: 100%;
+    height: 123px;
+    background: #f6f5ef;
+    border-top: 2px solid #000;
+    border-bottom:  1px solid #e5e5e5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+#wrap #header .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+/* 로고 */
+#wrap #header .container .left{
+    float: left;
+    /* 반응형으로 손 보기 */
+    width: 75px;
+    height: 100%;
+}
+
+#wrap #header .container .left h1 {
+    line-height: 109px;     /*테두리 뺀 실제 내부 높이 120px*/
+}
+
+
+#wrap #header .container .left h1 .logo-btn img {
+    width: 75px;
+}
+
+
+/* 네비게이션 */
+#wrap #header .container .right{
+    float: left;
+    /* 반응형으로 손 보기 */
+    width: 1025px;
+    height: 100%;
+}
+
+#wrap #header .container .right .top {
+    width: 100%;
+    height: 54px;
+    padding: 15px 0 0;
+}
+#wrap #header .container .right .top #aside{width: 100%;}
+#wrap #header .container .right .top #aside > ul{
+    float:right;
+}
+#wrap #header .container .right .top #aside > ul >li{
+    display: inline-block;
+}
+#wrap #header .container .right .top #aside > ul >li > div{
+    padding: 0 15px;
+}
+#wrap #header .container .right .top #aside > ul >li > div > a{
+    color: #555;
+    font-size: 13px;
+}
+#wrap #header .container .right .top #aside > ul >li > div > a:hover {
+    text-decoration: underline;
+}
+
+/* 통합검색 */
+#wrap #header .container .right .top #aside > ul >li:last-child{
+    padding: 0 20px 0 0;
+}
+#wrap #header .container .right .top #aside > ul >li:last-child >form > div {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 0;
+    background: #fff;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+#wrap #header .container .right .top #aside.addSearch > ul >li:last-child  form > div {
+    width: 182px;
+}
+#wrap #header .container .right .top #aside > ul >li:last-child  form > div > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    padding: 6px 10px;
+    transition: all .3s ease-in-out;
+}
+#wrap #header .container .right .top #aside.addSearch > ul >li:last-child  form > div > div {
+    width: 143px;
+}
+#wrap #header .container .right .top #aside > ul >li:last-child  form > div > div > input {
+    width: 100%;
+    height: 22px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    line-height: 22px;
+    padding: 0 10px;
+}
+#wrap #header .container .right .top #aside > ul >li:last-child  form > div > div > input::placeholder{
+    color:#bbb;
+}
+#wrap #header .container .right .top #aside > ul >li:last-child  form > div > a {
+    display: block;
+    width: 34px;
+    height: 34px;
+    position: relative;
+    z-index: 2;
+    margin: auto 0 auto auto;
+    display: flex;
+}
+#wrap #header .container .right .top #aside > ul >li:last-child  form > div > a > img{
+    width: 19px;
+    margin: auto;
+}
+
+
+
+#wrap #header .container .right .bottom {
+    width: 100%;
+    height: 66px;
+}
+#wrap #header .container .right .bottom #nav {width: 100%;}
+#wrap #header .container .right .bottom #nav > ul{float:right;}
+#wrap #header .container .right .bottom #nav > ul > li{
+    float: left;
+}
+#wrap #header .container .right .bottom #nav > ul > li > a{
+    display: block;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+    height: 66px;
+    line-height: 35px;
+    padding: 0 26px;
+}
+#wrap #header .container .right .bottom #nav > ul > li > a:hover{
+    text-decoration: underline;
+    color: #669900;
+    background: #2c2a29;
+}
+#wrap #header .container .right .bottom #nav > ul > li > a.addCurrent {
+    text-decoration: underline;
+    color: #669900;
+    background: #2c2a29;
+}
+
+
+/* 서브메뉴 */
+#wrap #header .container .right .bottom #nav > ul > li .sub {
+    width: 100%;
+    position: absolute;
+    top: 120px;
+    left: 0;
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top {
+    width: 100%;
+    background: #2c2a29;
+    height: auto;
+    padding: 20px 0;
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul {
+    width: 100%;
+    display: flex;
+    /* 줄바꿈 */
+    flex-flow:row wrap;
+}
+
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul > li{
+    width: 20%;
+}     /*칸*/
+/* #wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul > li:last-child {
+    float: none;
+} */
+
+
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul > li >dl{
+    width: 100%;
+    padding: 10px 0 0;
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul > li >dl >dt{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 28px;
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul > li >dl >dt >a{
+    color: #fff;
+    
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul > li >dl >dd{
+    font-size: 12px;
+    line-height: 20px;
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul > li >dl >dd >a{
+    color: #999;
+}
+
+#wrap #header .container .right .bottom #nav > ul > li .sub > .top .sub-container > ul > li >dl >dd >a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+#wrap #header .container .right .bottom #nav > ul > li .sub > .bottom {
+    width: 100%;
+    height: auto;
+    background: url(../img/gnb_sub_txbg.jpg) repeat 0 0;
+    padding: 15px 0;
+}
+
+#wrap #header .container .right .bottom #nav > ul > li .sub > .bottom .sub-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#wrap #header .container .right .bottom #nav > ul > li .sub > .bottom .sub-container > dl > dt  {line-height: 19px;}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .bottom .sub-container > dl > dt > a {
+    color: #999;
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .bottom .sub-container > dl > dt > a:hover {
+    text-decoration: underline;
+}
+#wrap #header .container .right .bottom #nav > ul > li .sub > .bottom .sub-container > dl > dd{
+    line-height: 19px;
+    color: #64a70b;
+}
+
+/* 서브메뉴 정리 */
+.sub1{display: none;}
+.sub2{display: none;}
+.sub3{display: none;}
+.sub4{display: none;}
+.sub5{display: none;}
+.sub6{display: none;}
+
+
+
+
+/* 모바일 버튼 아이콘 박스 */
+#wrap #header .container .right .mobile {
+    display: none;
+}
+#wrap #header .container .right .mobile > ul {
+    display: flex;
+}
+#wrap #header .container .right .mobile > ul > li {
+    height: 69px;
+    width: 60px;
+    display: flex;
+}
+#wrap #header .container .right .mobile > ul > li > a {
+    margin: auto;
+}
+#wrap #header .container .right .mobile > ul > li > a > img {
+    width: auto;
+    height: 30px;
+}
+#wrap #header .container .right .mobile > ul > li:last-child > a > img {
+    width: auto;
+    height: 23px;
+}
+
+
+/*header 끝  */
+
+/* main 시작 */
+#wrap #main{
+    width: 100%;
+    margin: 123px 0 0;
+    position: relative;
+    z-index: 2;
+}
+#wrap #main #section1{
+    width: 100%;
+    height: 637px;
+    background: url(../img/뉴스타벅스/2022_NewYear_main_bg.png) no-repeat 50% 50%;
+    background-size: cover;
+}
+#wrap #main #section1 .container{
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+}
+#wrap #main #section1 .container .ani {
+    position: absolute;
+    display: block;
+    opacity: 0;
+}
+#wrap #main #section1 .container .ani img {
+    width: 100%;
+}
+#wrap #main #section1 .container .ani1 {
+    top: 55px;
+    left: 29px;
+    width: 282px;
+}
+#wrap #main #section1 .container .ani2 {
+    bottom: 83px;
+    left: 85px;
+    width: 567px;
+}
+#wrap #main #section1 .container .ani3 {
+    bottom: 198px;
+    left: 428px;
+    width: 492px;
+}
+#wrap #main #section1 .container .ani4 {
+    bottom: 112px;
+    left: 868px;
+    width: 315px;
+}
+#wrap #main #section1 .container .ani5 {
+    top: 225px;
+    left: 110px;
+    height: 38px;
+    width: 125px;
+}
+#wrap #main #section1 .container .ani5 > a {
+    display: block;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border: 2px solid #4f7161;
+    color: #4f7161 ;
+    line-height: 34px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-family: 'Nanum Gothic';
+    transition: all .5s;
+}
+#wrap #main #section1 .container .ani5 > a:hover{
+    background: #4f7161;
+    color: #fff;
+    text-decoration: underline;
+}
+/* 섹션 1 끝 */
+
+
+/*  섹션 2 시작*/
+#wrap #main #section2{
+    width: 100%;
+    height: 62px;
+    background-image:linear-gradient(to right, #000 0%, #000 50%, #f6f5ef 50%, #f6f5ef 100%);
+    /* background-image:linear-gradient(to right, #f00 0%, #f00 33.333%, #0f0 33.333%, #0f0 66.666%, #00f 66.666%, #00f 100%); */
+}
+#wrap #main #section2 .container{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+}
+#wrap #main #section2 .container > .left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+#wrap #main #section2 .container > .left .left-box {
+    width: 100%;
+    height: 24px;
+    margin: auto 0;
+    display: flex;
+}
+
+#wrap #main #section2 .container > .left .left-box .notice-title {
+    width: 65px;
+    height: 24px;
+}
+#wrap #main #section2 .container > .left .left-box .notice-title > h2 {
+    height: 24px;
+    width: 65px;
+    background: url(../img/뉴스타벅스/notice_ttl.png) no-repeat 0 50%;
+    background-size: 65px auto;
+}
+#wrap #main #section2 .container > .left .left-box .notice-list {
+    width: 485px;
+    height: 24px;
+    padding: 0 15px;
+}
+
+#wrap #main #section2 .container > .left .left-box .notice-list > ul {
+    height: 24px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#wrap #main #section2 .container > .left .left-box .notice-list > ul > li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 24px;
+    top: 24px;
+}
+
+
+
+/* 공지사항 리스트 텍스트 슬라이드 1번 현재 */
+#wrap #main #section2 .container > .left .left-box .notice-list > ul > li:nth-child(1) {
+    z-index: 2;
+    top: 0;
+}
+/* 공지사항 리스트 텍스트 슬라이드 2번 다음 */
+#wrap #main #section2 .container > .left .left-box .notice-list > ul > li:nth-child(2) {
+    z-index: 3;
+    top: 24px;
+}
+
+
+#wrap #main #section2 .container > .left .left-box .notice-list > ul > li > a {
+    display: block;
+    background: #000;
+    line-height: 24px;
+    color: #fff;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 70px 0 0;
+    font-size: 14px;
+}
+#wrap #main #section2 .container > .left .left-box .notice-list > ul > li > a:hover {
+    text-decoration: underline;
+}
+/* 더보기 버튼 */
+#wrap #main #section2 .container > .left .left-box .notice-more {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: -61px;
+    background: #000;
+}
+#wrap #main #section2 .container > .left .left-box .notice-more a.more-btn {margin: auto;}
+#wrap #main #section2 .container > .left .left-box .notice-more a.more-btn > img {
+    width: 36px;
+    height: 36px;
+}
+
+
+
+/* 프로모션 */
+#wrap #main #section2 .container > .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+#wrap #main #section2 .container > .right .promotion {
+    width: 234px;
+    height: 36px;
+    margin: auto 0 auto auto;
+}
+#wrap #main #section2 .container > .right .promotion a.promotion-btn{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f5ef ;
+    background-image: url(../img/뉴스타벅스/prom_ttl_b.png),url(../img/뉴스타벅스/btn_prom_down.png);
+    background-position: 0 50%, 100% 50%;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 130px auto, 36px auto;
+}
+#wrap #main #section2 .container > .right .promotion a.promotion-btn.addPromBtn {
+    background-image: url(../img/뉴스타벅스/prom_ttl_b.png),url(../img/뉴스타벅스/btn_prom_up.png);
+    background-position: 0 50%, 100% 50%;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 130px auto, 36px auto;
+}
+
+
+#wrap #main #section3{
+    width: 100%;
+    height: 659px;
+    background: #f6f5ef;
+    padding: 39px 0 0;
+}
+#wrap #main #section3 .container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#wrap #main #section3 .container .slide-container {
+    width: 100%;
+}
+#wrap #main #section3 .container .slide-container .slide-view {
+    width: 819px;
+    height: 553px;
+    margin: 0 auto;
+}
+#wrap #main #section3 .container .slide-container .slide-view .slide-wrap {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    margin: 0 0 0 -100%;
+    position: relative;
+    top: 0;
+    left: 0;
+
+}
+#wrap #main #section3 .container .slide-container .slide-view .slide-wrap .slide{
+    width: 829px;
+
+}
+#wrap #main #section3 .container .slide-container .slide-view .slide-wrap .slide > div {
+    margin: 0 5px;
+}
+#wrap #main #section3 .container .slide-container .slide-view .slide-wrap .slide > div > img{
+    width: 819px;
+}
+
+/* 페이지 버튼 */
+#wrap #main #section3 .container .page-btn-box {
+    width: 100%;
+    height: 12px;
+    text-align: center;
+}
+#wrap #main #section3 .container .page-btn-box >li{
+    display: inline-flex;
+    margin: 0 3px;
+}
+#wrap #main #section3 .container .page-btn-box >li > a{
+    display: block;
+    width: 12px;
+    height: 12px;
+}
+#wrap #main #section3 .container .page-btn-box >li > a.play-btn{
+    width: 9px;
+    background: url(../img/main_prom_stop.png) no-repeat 50% 50%;
+}
+#wrap #main #section3 .container .page-btn-box >li > a.play-btn.addPlay {
+    background: url(../img/뉴스타벅스/main_prom_play.png) no-repeat 50% 50%;
+}
+#wrap #main #section3 .container .page-btn-box >li > a.page-btn{
+    border-radius: 50%;
+    background: url(../img/뉴스타벅스/main_prom_off.png) no-repeat 50% 50%;
+}
+#wrap #main #section3 .container .page-btn-box >li > a.page-btn.addPage {
+    background: url(../img/뉴스타벅스/main_prom_on.png) no-repeat 50% 50%;
+}
+
+
+/* 좌우 화살버튼 */
+#wrap #main #section3 .container .prev-btn-arrow {
+    display: block;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    margin-top: -66.5px;
+    margin-left: -550px;
+    border-radius: 50%;
+    transition: .6s;
+}
+#wrap #main #section3 .container .prev-btn-arrow:hover {
+    background: #fff;
+}
+#wrap #main #section3 .container .prev-btn-arrow > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/뉴스타벅스/arrow_left_on.png) no-repeat 50% 50%;
+    border: 2px solid #000;
+    border-radius: 50%;
+}
+
+
+#wrap #main #section3 .container .next-btn-arrow {
+    display: block;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    z-index: 2;
+    margin-top: -66.5px;
+    margin-right: -550px;
+    border-radius: 50%;
+    transition: .6s;
+}
+#wrap #main #section3 .container .next-btn-arrow:hover{
+    background: #fff;
+}
+#wrap #main #section3 .container .next-btn-arrow > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/뉴스타벅스/arrow_right_on.png) no-repeat 50% 50%;
+    border: 2px solid #000;
+    border-radius: 50%
+}
+
+
+
+
+
+
+
+
+
+#wrap #main #section4{
+    width: 100%;
+    height: 240px;
+    background: #1e3932;
+    padding: 30px 0 40px 0;
+}
+#wrap #main #section4 .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+}
+
+#wrap #main #section4 .container .left {
+    width: 256px;
+    height: 100%;
+    display: flex;
+}
+#wrap #main #section4 .container .left > img {
+    width: 176px;
+    margin: auto;
+}
+
+
+#wrap #main #section4 .container .right {
+    width: 844px;
+    height: 100%;
+    color: #fff;
+}
+
+/* 스타벅스마느이 특별한 혜택, 스타벅스 리워드 */
+#wrap #main #section4 .container .right .top{
+    padding: 0 0 18px 0;
+    border-bottom: 1px solid rgba(255,255,255, .15);
+}
+#wrap #main #section4 .container .right .top > h2{
+    font-size: 26px;
+    padding:  0 0 20px 0;
+}
+#wrap #main #section4 .container .right .top > h2 > span{
+    display: inline;
+    font-weight: 400;
+}
+#wrap #main #section4 .container .right .top > h2 > strong{
+    font-weight: 800;
+}
+
+/* 스타벅스 회원이세요?.....*/
+#wrap #main #section4 .container .right .top > div{
+    display: flex;
+}
+#wrap #main #section4 .container .right .top > div > h3{
+    font-size: 17px;
+    line-height: 120%;
+}
+#wrap #main #section4 .container .right .top > div > h3 > span {
+    display: inline;
+}
+#wrap #main #section4 .container .right .top > div > h3 > strong{
+    font-weight: 800;
+}
+#wrap #main #section4 .container .right .top  div  h3.mobile{
+  display: none;
+}
+#wrap #main #section4 .container .right .top  div  h3.pc{
+    display: block;
+}
+
+/* 회원가입 로그인 */
+#wrap #main #section4 .container .right .top > div > span{
+    margin: auto 0 0 auto ;
+}
+#wrap #main #section4 .container .right .top > div > span > a{
+    display: inline-block;
+    height: 38px;
+    line-height: 33px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+    font-size: 14px;
+}
+#wrap #main #section4 .container .right .top > div > span > a:hover{
+    text-decoration: underline;
+}
+#wrap #main #section4 .container .right .top > div > span > a.sign-up{
+    background: #00704a;
+    border: 2px solid #00704a;
+    width: 93px;
+}
+#wrap #main #section4 .container .right .top > div > span > a.sign-in{
+    width: 80px;
+    background: transparent;
+    border:2px solid #fff;
+    margin: 0 0 0 10px;
+ 
+}
+
+/* 회원가입 후 스타벅스 e-Gift..... */
+#wrap #main #section4 .container .right .bottom {
+    padding: 25px 0 0 0;
+    display: flex;
+}
+#wrap #main #section4 .container .right .bottom > h4{
+    font-size: 14px;
+    line-height: 120%
+}
+#wrap #main #section4 .container .right .bottom > h4 > span{
+    display: inline;
+}
+#wrap #main #section4 .container .right .bottom > h4 > strong{
+    font-weight: 800;
+}
+#wrap #main #section4 .container .right .bottom > h4 > br{
+    display: block;
+}
+#wrap #main #section4 .container .right .bottom > h4.mobile{
+    display: none;
+}
+
+
+/* e-gift-card 선물하기 */
+#wrap #main #section4 .container .right .bottom > span{
+    margin: 0 0 auto auto
+}
+#wrap #main #section4 .container .right .bottom > span > a{
+    display: inline-block;
+    height: 38px;
+    line-height: 33px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 183px;
+    background: transparent;
+    border:3px solid #fff;
+}
+
+
+
+#wrap #main #section5{
+    width: 100%;
+    height: 573px;
+    background: url(../img/뉴스타벅스/2022_NewYear_bean_bg.png) no-repeat 50% 50%;
+    background-size: cover;
+}
+#wrap #main #section5 .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+}
+
+#wrap #main #section5 .container .left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+#wrap #main #section5 .container .left > img {
+    width: 360px;
+    margin: auto 0 auto auto;
+}
+
+
+#wrap #main #section5 .container .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+#wrap #main #section5 .container .right > span {
+    margin: auto auto auto 0;
+}
+#wrap #main #section5 .container .right > span > img {
+    width: auto;
+}
+#wrap #main #section5 .container .right > span > img.mobile {
+    display: none;
+}
+#wrap #main #section5 .container .right > span > a{
+    display: block;
+    height: 38px;
+    line-height: 33px;
+    text-align: center;
+    color: #453d3d;
+    font-weight: 500;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 125px;
+    background: transparent;
+    border:2px solid #453d3d;
+    transition: all .3s;
+    margin: 50px 0 0 0;
+}
+#wrap #main #section5 .container .right > span > a:hover {
+    text-decoration: underline;
+    background: #453d3d;
+    color: #fff;
+}
+
+
+#wrap #main #section6{
+    width: 100%;
+    height: 400px;
+    background: #094a3d;
+}
+#wrap #main #section6::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 400px;
+    background: url(../img/reserve_christmas_bean_211018.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+/* #wrap #main #section6 .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgba(0,0,200, .3);
+    height: 100%;
+} */
+
+
+#wrap #main #section7{
+    width: 100%;
+    height: 800px;
+    background: #45434c url(../img/fav_prod_bg_new.jpg) no-repeat 50% 50% fixed;
+    background-size: cover;
+}
+#wrap #main #section7 .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgba(0,0,200, .3);
+    height: 100%;
+}
+
+#wrap #main #section8{
+    width: 100%;
+    height: 400px;
+    background: #fff url(../img/reserve_bg_pc.png) no-repeat 50% 50%;
+}
+#wrap #main #section8 .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgba(0,0,200, .3);
+    height: 100%;
+}
+
+#wrap #main #section9{
+    width: 100%;
+    height: 400px;
+    background: url(../img/store_bg.jpg) no-repeat 50% 50%;
+    background-size: cover;
+}
+#wrap #main #section9 .container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgba(0,0,200, .3);
+    height: 100%;
+}
+
+
+#wrap #footer{
+    width: 100%;
+    height: 601px;
+    background: #2c2a29;
+    position: relative;
+    z-index: 1;
+}
+
+#wrap #footer .container {
+    width: 100%;
+    max-width: 1182px;
+    margin: 0 auto;
+    background-color: rgba(0,0,200, .3);
+    height: 100%;
+}
